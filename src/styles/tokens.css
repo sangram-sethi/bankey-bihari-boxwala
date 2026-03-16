@@ -1,0 +1,27 @@
+:root {
+  --background: #fbf7f2;
+  --foreground: #1f1b18;
+
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+
+  --muted: rgba(31, 27, 24, 0.72);
+  --muted-soft: rgba(31, 27, 24, 0.55);
+
+  --maroon: #6f1d2b;
+  --maroon-dark: #571522;
+
+  --gold: #b08d57;
+  --gold-soft: #ead7b0;
+
+  --border: rgba(31, 27, 24, 0.12);
+  --border-strong: rgba(31, 27, 24, 0.18);
+
+  --shadow-soft: 0 18px 45px rgba(31, 27, 24, 0.08);
+  --shadow-card: 0 14px 34px rgba(111, 29, 43, 0.08);
+
+  --radius-card: 28px;
+  --radius-pill: 999px;
+
+  --container-max: 80rem;
+}

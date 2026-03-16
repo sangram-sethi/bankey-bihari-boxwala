@@ -28,11 +28,13 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="font-sans text-foreground antialiased">
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
+      <body className="min-h-screen bg-(--background) font-sans text-(--foreground) antialiased">
+        <div className="relative min-h-screen overflow-x-clip">
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+        </div>
       </body>
     </html>
   );

@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/common/button";
 import { Container } from "@/components/common/container";
 import { ProductCard } from "@/components/collection/product-card";
 import { products } from "@/features/products/data/products";
+import {
+  createPageMetadata,
+  createProductMetadata,
+} from "@/features/seo/metadata";
 import { getWhatsAppHref } from "@/lib/constants/whatsapp";
 
 export async function generateStaticParams() {
@@ -16,6 +21,23 @@ type ProductDetailPageProps = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: ProductDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((item) => item.slug === slug);
+
+  if (!product) {
+    return createPageMetadata({
+      title: "Product Not Found",
+      description: "The requested product page could not be found.",
+      path: "/collection",
+    });
+  }
+
+  return createProductMetadata(product);
+}
 
 export default async function ProductDetailPage({
   params,

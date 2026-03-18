@@ -2,49 +2,58 @@ import type { MetadataRoute } from "next";
 import { products } from "@/features/products/data/products";
 import { siteConfig } from "@/lib/constants/site";
 
+const staticRoutes = [
+  {
+    path: "/",
+    changeFrequency: "weekly" as const,
+    priority: 1,
+  },
+  {
+    path: "/about",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/collection",
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  },
+  {
+    path: "/contact",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/whatsapp-order",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+];
+
+function getAbsoluteUrl(path: string) {
+  if (path === "/") {
+    return siteConfig.url;
+  }
+
+  return `${siteConfig.url}${path}`;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/collection`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/whatsapp-order`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+  const routeEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+    url: getAbsoluteUrl(route.path),
+    lastModified: now,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${baseUrl}/collection/${product.slug}`,
+  const productEntries: MetadataRoute.Sitemap = products.map((product) => ({
+    url: getAbsoluteUrl(`/collection/${product.slug}`),
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...productRoutes];
+  return [...routeEntries, ...productEntries];
 }

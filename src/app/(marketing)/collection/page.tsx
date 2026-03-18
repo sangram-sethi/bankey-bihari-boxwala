@@ -1,8 +1,22 @@
+import { createPageMetadata } from "@/features/seo/metadata";
 import { Container } from "@/components/common/container";
 import { SectionHeading } from "@/components/common/section-heading";
 import { ProductCard } from "@/components/collection/product-card";
 import { categories } from "@/features/products/data/categories";
 import { products } from "@/features/products/data/products";
+
+export const metadata = createPageMetadata({
+  title: "Collection",
+  description:
+    "Browse jewellery stock boxes, transparent stock boxes, velvet stock boxes, tops stock boxes, and premium specialty boxes for wholesale buying.",
+  path: "/collection",
+  keywords: [
+    "jewellery stock boxes collection",
+    "transparent stock boxes",
+    "velvet jewellery boxes",
+    "premium specialty boxes",
+  ],
+});
 
 export default function CollectionPage() {
   return (

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { products } from "@/features/products/data/products";
 import { siteConfig } from "@/lib/constants/site";
 
@@ -30,7 +31,7 @@ const staticRoutes = [
   },
 ];
 
-function getAbsoluteUrl(path: string) {
+function absoluteUrl(path: string) {
   if (path === "/") {
     return siteConfig.url;
   }
@@ -41,19 +42,19 @@ function getAbsoluteUrl(path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const routeEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
-    url: getAbsoluteUrl(route.path),
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+    url: absoluteUrl(route.path),
     lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
 
   const productEntries: MetadataRoute.Sitemap = products.map((product) => ({
-    url: getAbsoluteUrl(`/collection/${product.slug}`),
+    url: absoluteUrl(`/collection/${product.slug}`),
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.7,
   }));
 
-  return [...routeEntries, ...productEntries];
+  return [...staticEntries, ...productEntries];
 }

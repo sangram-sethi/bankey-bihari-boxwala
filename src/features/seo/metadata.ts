@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
+
 import type { Product } from "@/features/products/types/product.types";
 import { siteConfig } from "@/lib/constants/site";
 
-const baseKeywords = [
-  "jewellery stock box",
-  "jewellery packaging",
-  "wholesale jewellery box",
-  "stock boxes manufacturer",
-  "Bankey Bihari Boxwala",
-  "jewellery box supplier India",
-  "premium jewellery packaging",
-  "bulk jewellery boxes",
-];
-
-function getAbsoluteUrl(path: string) {
+function absoluteUrl(path: string = "/") {
   if (path === "/") {
     return siteConfig.url;
   }
@@ -21,8 +11,8 @@ function getAbsoluteUrl(path: string) {
   return `${siteConfig.url}${path}`;
 }
 
-function mergeKeywords(keywords: string[] = []) {
-  return [...new Set([...baseKeywords, ...keywords])];
+function mergeKeywords(extraKeywords: string[] = []) {
+  return [...new Set([...siteConfig.keywords, ...extraKeywords])];
 }
 
 export const defaultMetadata: Metadata = {
@@ -33,33 +23,48 @@ export const defaultMetadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
-  keywords: baseKeywords,
+  referrer: "origin-when-cross-origin",
+  authors: [{ name: siteConfig.legalName }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  keywords: siteConfig.keywords,
   alternates: {
-    canonical: siteConfig.url,
+    canonical: absoluteUrl("/"),
   },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: absoluteUrl("/"),
     siteName: siteConfig.name,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: siteConfig.ogImagePath,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} social preview`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [siteConfig.ogImagePath],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  category: "business",
 };
 
 type CreatePageMetadataArgs = {
@@ -75,39 +80,46 @@ export function createPageMetadata({
   path,
   keywords = [],
 }: CreatePageMetadataArgs): Metadata {
-  const url = getAbsoluteUrl(path);
+  const canonical = absoluteUrl(path);
 
   return {
     title,
     description,
     keywords: mergeKeywords(keywords),
     alternates: {
-      canonical: url,
+      canonical,
     },
     openGraph: {
       title: `${title} | ${siteConfig.name}`,
       description,
-      url,
+      url: canonical,
       siteName: siteConfig.name,
       locale: "en_IN",
       type: "website",
+      images: [
+        {
+          url: siteConfig.ogImagePath,
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} social preview`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteConfig.name}`,
       description,
+      images: [siteConfig.ogImagePath],
     },
   };
 }
 
 export function createProductMetadata(product: Product): Metadata {
-  const path = `/collection/${product.slug}`;
-  const url = getAbsoluteUrl(path);
-
-  return {
+  return createPageMetadata({
     title: product.name,
     description: product.shortDescription,
-    keywords: mergeKeywords([
+    path: `/collection/${product.slug}`,
+    keywords: [
       product.name,
       product.category.replaceAll("-", " "),
       product.material,
@@ -116,22 +128,6 @@ export function createProductMetadata(product: Product): Metadata {
       ...product.sizes,
       "wholesale jewellery packaging",
       "bulk order jewellery boxes",
-    ]),
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: `${product.name} | ${siteConfig.name}`,
-      description: product.shortDescription,
-      url,
-      siteName: siteConfig.name,
-      locale: "en_IN",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${product.name} | ${siteConfig.name}`,
-      description: product.shortDescription,
-    },
-  };
+    ],
+  });
 }

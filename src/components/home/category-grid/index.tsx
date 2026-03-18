@@ -9,8 +9,8 @@ export function CategoryGrid() {
       <Container className="space-y-10">
         <SectionHeading
           eyebrow="Collections"
-          title="Explore our signature stock box categories"
-          description="A focused wholesale range shaped for jewellery businesses that want both presentation value and practical ordering."
+          title="Explore stock box categories shaped for premium jewellery presentation."
+          description="Our collection is organised for wholesale buyers who want to compare product styles quickly, understand presentation differences, and move into enquiry without confusion."
         />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

@@ -2,12 +2,12 @@ import { Badge } from "@/components/common/badge";
 import { Container } from "@/components/common/container";
 
 const points = [
-  "Manufacturer pricing for wholesale buyers",
-  "Luxury-inspired visual presentation",
-  "Per-piece price visibility on site",
-  "Bulk orders handled directly on WhatsApp",
-  "Focused catalogue built for jewellery shops",
-  "Premium brand feel with practical buying flow",
+  "Wholesale-first website flow designed for business buyers",
+  "Premium visual presentation that strengthens product impression",
+  "Per-piece pricing direction visible for faster shortlisting",
+  "Focused jewellery packaging catalogue instead of a cluttered store",
+  "Direct WhatsApp enquiry for quicker quantity and order discussion",
+  "Clear brand language built to feel reliable, polished, and serious",
 ];
 
 export function WhyChooseUs() {
@@ -18,13 +18,14 @@ export function WhyChooseUs() {
           <Badge variant="wine">Why Choose Us</Badge>
 
           <h2 className="font-serif text-4xl leading-tight text-(--foreground) sm:text-5xl">
-            Built for jewellery businesses, not retail shoppers.
+            A better buying experience for wholesale jewellery businesses.
           </h2>
 
           <p className="max-w-xl text-sm leading-8 text-(--muted) sm:text-base">
-            This website is shaped as a premium wholesale catalogue where serious
-            buyers can discover products quickly, understand pricing clearly,
-            and move straight into a WhatsApp order conversation.
+            This website is intentionally built for trade buyers who want
+            premium presentation, faster comparison, and a smoother path to
+            enquiry. The goal is simple: make product discovery easier and
+            business discussion faster.
           </p>
         </div>
 

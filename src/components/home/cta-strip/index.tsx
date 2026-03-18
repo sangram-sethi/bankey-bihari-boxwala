@@ -9,16 +9,17 @@ export function CtaStrip() {
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-4">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[rgba(255,255,255,0.78)]">
-                Bulk Enquiry
+                Wholesale Enquiry
               </p>
 
               <h2 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
-                Need premium stock boxes for your jewellery shop?
+                Ready to discuss premium stock boxes for your business?
               </h2>
 
               <p className="max-w-2xl text-sm leading-8 text-[rgba(255,255,255,0.82)] sm:text-base">
-                Explore the collection and continue your order discussion
-                directly on WhatsApp for quantity, pricing, and product details.
+                Browse the collection, shortlist the right products, and
+                continue directly on WhatsApp for quantity, availability, and
+                final order discussion.
               </p>
             </div>
 
@@ -35,7 +36,7 @@ export function CtaStrip() {
                 href="/whatsapp-order"
                 className="bg-white/15 text-white hover:bg-white/20"
               >
-                Order on WhatsApp
+                Enquire on WhatsApp
               </Button>
             </div>
           </div>

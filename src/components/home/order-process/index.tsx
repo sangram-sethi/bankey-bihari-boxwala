@@ -7,19 +7,19 @@ const steps = [
     number: "01",
     title: "Browse the collection",
     description:
-      "Explore available stock box categories and compare the premium presentation styles.",
+      "Explore the available stock box categories and shortlist the styles that match your showroom, gifting, or wholesale requirement.",
   },
   {
     number: "02",
-    title: "Choose your preferred design",
+    title: "Review product details",
     description:
-      "Open the product page, review the per-piece price, and note the colours, sizes, and finish.",
+      "Open any product page to check per-piece price direction, colour options, sizes, material, and finish before making an enquiry.",
   },
   {
     number: "03",
-    title: "Place enquiry on WhatsApp",
+    title: "Continue on WhatsApp",
     description:
-      "Send your product and quantity requirement directly on WhatsApp to continue the order conversation.",
+      "Share your selected product and quantity requirement directly on WhatsApp for faster availability, pricing, and order discussion.",
   },
 ];
 
@@ -32,12 +32,13 @@ export function OrderProcess() {
             <Badge variant="gold">Order Process</Badge>
 
             <h2 className="max-w-3xl font-serif text-4xl leading-tight text-(--foreground) sm:text-5xl">
-              A simple buying journey designed for wholesale orders.
+              A smooth wholesale journey from browsing to enquiry.
             </h2>
 
             <p className="max-w-2xl text-sm leading-8 text-(--muted) sm:text-base">
-              We keep the website clean and fast. Product discovery happens on
-              the site, while the final order discussion happens on WhatsApp.
+              We keep the website clean and easy to browse. Product discovery
+              happens here, while final quantity and order discussion continues
+              directly on WhatsApp for speed and clarity.
             </p>
           </div>
 

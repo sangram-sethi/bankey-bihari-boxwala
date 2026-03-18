@@ -11,8 +11,8 @@ export function FeaturedProducts() {
       <Container className="space-y-10">
         <SectionHeading
           eyebrow="Featured Products"
-          title="Selected designs for premium retail presentation"
-          description="A curated starter set for the first version of the website. These products establish the brand tone and showroom-facing packaging style."
+          title="Selected products that define our premium wholesale catalogue."
+          description="These featured designs set the tone for the collection: elegant presentation, showroom-friendly appeal, and a cleaner buying flow for jewellery businesses."
         />
 
         <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">

@@ -11,32 +11,34 @@ export function Hero() {
         <div className="space-y-8">
           <div className="space-y-5">
             <Badge variant="gold">
-              Manufacturer • Wholesale • Premium Luxury
+              Wholesale Manufacturer • Premium Presentation • India
             </Badge>
 
             <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] text-(--foreground) sm:text-6xl lg:text-7xl">
-              Royal packaging for modern jewellery businesses.
+              Premium jewellery stock boxes for serious wholesale buyers.
             </h1>
 
             <p className="max-w-2xl text-base leading-8 text-(--muted) sm:text-lg">
-              Explore premium jewellery stock boxes designed for wholesale
-              buyers across India. View per-piece pricing, discover elegant
-              styles, and place your enquiry directly on WhatsApp.
+              Discover elegant stock boxes designed to improve showroom
+              presentation, gifting value, and first impression. Browse the
+              collection, review per-piece pricing direction, and continue your
+              business enquiry directly on WhatsApp.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-4">
             <Button href="/collection" size="lg">
-              View Collection
+              Explore Collection
             </Button>
 
             <Button href="/whatsapp-order" variant="secondary" size="lg">
-              Order on WhatsApp
+              Start WhatsApp Enquiry
             </Button>
           </div>
 
           <div className="flex flex-wrap gap-6 text-sm text-(--muted)">
-            <span>Per-piece pricing</span>
+            <span>Wholesale-first flow</span>
+            <span>Per-piece price direction</span>
             <span>GST extra</span>
             <span>India only</span>
           </div>
@@ -48,15 +50,16 @@ export function Hero() {
 
           <div className="relative rounded-4xl border border-(--border) bg-linear-to-br from-[#fff9f2] via-[#f6ead8] to-[#ead6b3] p-6 shadow-(--shadow-soft) sm:p-8">
             <div className="rounded-[28px] border border-white/60 bg-[rgba(255,255,255,0.45)] p-6 sm:p-8">
-              <Badge variant="soft">Signature Category</Badge>
+              <Badge variant="soft">Signature Range</Badge>
 
               <h2 className="mt-5 font-serif text-3xl text-(--foreground) sm:text-4xl">
                 Jewellery Stock Boxes
               </h2>
 
               <p className="mt-4 text-sm leading-7 text-(--muted) sm:text-base">
-                Designed for jewellery shops that want elegant stock handling,
-                premium counter presentation, and a cleaner brand image.
+                Built for jewellers who want organised stock handling, premium
+                counter presentation, and packaging that makes products feel
+                more valuable before the box is even opened.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -65,18 +68,18 @@ export function Hero() {
                     Best For
                   </p>
                   <p className="mt-2 text-sm leading-6 text-(--foreground)">
-                    Jewellery counters, showroom display, organised stock
-                    presentation
+                    Showrooms, jewellery counters, festive gifting, and premium
+                    stock presentation
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/70 bg-white/55 p-4">
                   <p className="text-xs uppercase tracking-[0.22em] text-(--muted-soft)">
-                    Order Flow
+                    Buying Flow
                   </p>
                   <p className="mt-2 text-sm leading-6 text-(--foreground)">
-                    Browse online, confirm quantity on WhatsApp, place bulk
-                    order directly
+                    Browse online, shortlist products, confirm quantity on
+                    WhatsApp, and continue the order discussion directly
                   </p>
                 </div>
               </div>

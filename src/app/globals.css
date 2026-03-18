@@ -8,15 +8,12 @@
   }
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
 }
 
 body {
@@ -27,8 +24,6 @@ body {
     radial-gradient(circle at bottom right, rgba(111, 29, 43, 0.06), transparent 24%),
     var(--background);
   color: var(--foreground);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -40,28 +35,11 @@ button {
   cursor: pointer;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 ::selection {
   background: rgba(111, 29, 43, 0.16);
   color: var(--foreground);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.font-brand {
+  font-family: var(--font-brand), serif;
 }

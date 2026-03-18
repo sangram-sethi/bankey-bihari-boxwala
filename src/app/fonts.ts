@@ -16,10 +16,8 @@ export const cormorant = Cormorant_Garamond({
 
 export const samarkan = localFont({
   src: "./fonts/Samarkan.ttf",
-  variable: "--font-brand",
   display: "swap",
+  variable: "--font-brand",
   weight: "400",
-  preload: true,
   fallback: ["serif"],
-  adjustFontFallback: "Times New Roman",
 });

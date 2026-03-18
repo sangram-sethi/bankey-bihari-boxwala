@@ -1,7 +1,6 @@
 import Link from "next/link";
-
-import { Button } from "@/components/common/button";
 import { Container } from "@/components/common/container";
+import { Button } from "@/components/common/button";
 import { navigationLinks } from "@/lib/constants/navigation";
 import { siteConfig } from "@/lib/constants/site";
 import { getWhatsAppHref } from "@/lib/constants/whatsapp";
@@ -9,33 +8,28 @@ import { getWhatsAppHref } from "@/lib/constants/whatsapp";
 export function Footer() {
   return (
     <footer className="border-t border-(--border) bg-white/65">
-      <Container className="grid gap-10 py-14 lg:grid-cols-[1.1fr_0.8fr_1fr]">
+      <Container className="grid gap-10 py-14 lg:grid-cols-[1.15fr_0.85fr_1fr]">
         <div className="space-y-5">
           <div>
-            <h3 className="font-serif text-3xl text-(--foreground)">
-              {siteConfig.name}
-            </h3>
+            <div className="inline-flex flex-col leading-none">
+              <span className="font-brand text-3xl text-(--foreground)">
+                Bankey Bihari
+              </span>
+              <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-(--gold)">
+                Boxwala
+              </span>
+            </div>
+
             <p className="mt-2 text-xs uppercase tracking-[0.26em] text-(--gold)">
               Manufacturer • Wholesale • India
             </p>
           </div>
 
           <p className="max-w-sm text-sm leading-7 text-(--muted)">
-            Premium jewellery stock box manufacturer for wholesale buyers who
-            want elegant packaging, smoother enquiries, and direct business
-            handling on WhatsApp.
+            Premium jewellery stock box manufacturer for wholesale buyers across
+            India with a luxury-first catalogue experience and WhatsApp-based
+            order flow.
           </p>
-
-          <div className="flex flex-wrap gap-3">
-            {siteConfig.trustHighlights.slice(0, 4).map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-(--border) bg-[#fcf7f1] px-4 py-2 text-xs text-(--foreground)"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
 
           <p className="text-sm text-(--muted)">{siteConfig.pricingNote}</p>
         </div>
@@ -60,28 +54,13 @@ export function Footer() {
 
         <div className="space-y-5">
           <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-(--gold)">
-            Business Contact
+            Contact
           </h4>
 
           <div className="space-y-3 text-sm leading-7 text-(--muted)">
             <p>{siteConfig.location}</p>
-            <p>{siteConfig.serviceArea}</p>
-            <p>{siteConfig.businessHours}</p>
-
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="block transition hover:text-(--maroon)"
-            >
+            <a href={`mailto:${siteConfig.email}`} className="hover:text-(--maroon)">
               {siteConfig.email}
-            </a>
-
-            <a
-              href={getWhatsAppHref()}
-              target="_blank"
-              rel="noreferrer"
-              className="block transition hover:text-(--maroon)"
-            >
-              {siteConfig.whatsappDisplay}
             </a>
           </div>
 

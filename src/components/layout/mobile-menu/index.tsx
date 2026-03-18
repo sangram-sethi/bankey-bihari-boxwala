@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/common/button";
 import { navigationLinks } from "@/lib/constants/navigation";
-import { siteConfig } from "@/lib/constants/site";
 import { getWhatsAppHref } from "@/lib/constants/whatsapp";
 
 export function MobileMenu() {
@@ -57,12 +56,12 @@ export function MobileMenu() {
 
           <div className="absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col border-l border-(--border) bg-(--background) p-6 shadow-2xl">
             <div className="flex items-start justify-between gap-4 border-b border-(--border) pb-6">
-              <div>
-                <p className="font-serif text-2xl text-(--foreground)">
-                  {siteConfig.name}
+              <div className="leading-none">
+                <p className="font-brand text-3xl text-(--foreground)">
+                  Bankey Bihari
                 </p>
-                <p className="mt-1 text-xs uppercase tracking-[0.24em] text-(--gold)">
-                  Manufacturer • Wholesale
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-(--gold)">
+                  Boxwala
                 </p>
               </div>
 
